@@ -1,25 +1,27 @@
 open_file = open("CupcakeInvoices.csv")
 
-for row in open_file:
-    print(row) 
-    break
+for line in open_file:
+    print(line) 
 
-for cupcake_type in open_file:
-    values = row.split(',')
+open_file.seek(0, 0)
+for line in open_file:
+    values = line.split(',')
     print(values[2])
-    break
 
-for invoice_total in open_file:
-    values = row.split(',')
+
+
+open_file.seek(0, 0)
+for line in open_file:
+    values = line.split(',')
     total = int(values[3]) * float(values[4])
     total = round(total, 2)
     print(total)
-    break
 
 total = 0
 
-for gtotal in open_file:
-    values = row.split(',')
+open_file.seek(0, 0)
+for line in open_file:
+    values = line.split(',')
     total = total + (int(values[3]) * float(values[4]))
     total = round(total, 2)
     print(total)
